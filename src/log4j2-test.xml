@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN"><!-- 
+  <Appenders>
+     <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="ZAlog/app.log"
+                 filePattern="ZAlog/$${date:yyyy}/$${date:MM}/%d{dd}-%i.log" append="true" immediateFlush ="false">
+      <PatternLayout>
+        <Pattern>%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="500 MB"/>
+      </Policies>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+    <Root level="warn" includeLocation="false">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Root> 
+  </Loggers> -->
+   <Properties>
+    <Property name="filename">ZAlog/</Property>
+  </Properties>
+  <Appenders>
+     <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="${filename}zalog.log"
+                 filePattern="${filename}zalog%d{dd}-%i.log" append="true" immediateFlush ="false">
+      <PatternLayout>
+        <Pattern>%m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+    <Root level="info" includeLocation="false">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Root> 
+  </Loggers>
+</Configuration>
